@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Hitung Volume Bola</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .formula { font-weight: bold; color: blue; }
+        .result { margin-top: 10px; font-size: 1.2em; color: green; }
+    </style>
+</head>
+<body>
+
+    <h2>Kalkulator Volume Bola</h2>
+    
+    <p>Rumus: <span class="formula">V = 4/3 &times; &pi; &times; r&sup3;</span></p>
+
+    <label for="radius">Jari-jari (r):</label>
+    <input type="number" id="radius" placeholder="Masukkan jari-jari">
+    <button onclick="hitungVolume()">Hitung</button>
+
+    <div class="result" id="hasil"></div>
+
+    <script>
+        function hitungVolume() {
+            // Mengambil nilai jari-jari
+            let r = document.getElementById('radius').value;
+            
+            // Menghitung volume dengan rumus: 4/3 * pi * r^3
+            let volume = (4/3) * Math.PI * Math.pow(r, 3);
+            
+            // Menampilkan hasil dengan 2 angka di belakang koma
+            document.getElementById('hasil').innerHTML = "Volume: " + volume.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>
